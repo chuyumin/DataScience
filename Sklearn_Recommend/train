@@ -1,0 +1,9 @@
+
+from sklearn.neighbors import KNeighborsClassifier
+import vector
+import joblib
+
+def train():
+    clf = KNeighborsClassifier(n_neighbors=8)
+    clf.fit(vector.generatevectors(), vector.generatevectors())
+    joblib.dump(clf, 'target.pkl')
